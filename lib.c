@@ -27,7 +27,6 @@ void draw_pixel(struct Bitmap bitmap, int x, int y, t_color color) {
     return;
   }
 
-  printf("color: %i", color);
   bitmap.pixels[y * bitmap.width + x] = color;
 }
 
@@ -94,7 +93,8 @@ void write_pixels(FILE *file, Bitmap bitmap) {
       fwrite(&red, 1, 1, file);
     }
 
-    for (int row = bitmap.width * 3; row < row_size; row++) {
+    // 5 * 3  = 15 + 1 = 16 -> 1px
+    for (int i = bitmap.width * 3; i < row_size; i++) {
       fputc(0, file);
     }
   }
