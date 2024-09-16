@@ -13,5 +13,5 @@ Run make to clean and build
 Perharps you will want to see the bytes in bitmap file
 
 ```bash
-    xdd out.bitmap | less
+  xdd out.bitmap | less
 ```
